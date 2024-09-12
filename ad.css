@@ -1,0 +1,35 @@
+.job-ad {
+    background-color: #ff5722;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px; /* Adds space above the ad to separate it from the image */
+}
+
+.job-ad h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.job-ad p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.job-ad a {
+    background-color: white;
+    color: #ff5722;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.job-ad a:hover {
+    background-color: #e64a19;
+    color: white;
+}
+
