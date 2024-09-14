@@ -1,19 +1,32 @@
 const websiteStructuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Eman Hussein Shahrour",
   "url": "https://www.eman-shahrour.de",
-  "inLanguage": "de",
+  "name": "Eman Hussein Shahrour",
   "alternateName": "إيمان حسين شحرور",
-  "alternateUrl": "https://www.eman-shahrour.de/ar/",
+  "inLanguage": ["de", "ar"],
+  "dateCreated": "2023-12-23",
+  "dateModified": "2024-09-14",
   "publisher": {
     "@type": "Person",
     "name": "Eman Hussein Shahrour"
   },
-  "logo": "https://www.eman-shahrour.de/profile2.webp",
-  "dateCreated": "2023-12-23",
-  "dateModified": "2024-09-10"
+  "hasPart": [
+    {
+      "@type": "WebPage",
+      "name": "Arabische Version",
+      "url": "https://www.eman-shahrour.de/ar/",
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Datenschutzrichtlinie",
+      "url": "https://www.eman-shahrour.de/privacy-policy/",
+      "inLanguage": "de"
+    }
+  ]
 };
+
 
 const breadcrumbStructuredData = {
   "@context": "https://schema.org",
@@ -22,30 +35,34 @@ const breadcrumbStructuredData = {
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Startseite",
       "item": "https://www.eman-shahrour.de"
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Arabic Version",
+      "name": "Arabische Version",
       "item": "https://www.eman-shahrour.de/ar/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Privacy Policy",
+      "name": "Datenschutzrichtlinie",
       "item": "https://www.eman-shahrour.de/privacy-policy/"
     }
   ]
 };
 
-const structuredData = {
+
+const personStructuredData = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "Person",
   "name": "Eman Hussein Shahrour",
-  "description": "Kontaktinformationen und Standort von Frau Eman Hussein Shahrour, die im Bereich Lebensmittellieferung in Bremerhaven, Deutschland tätig ist.",
+  "alternateName": "إيمان حسين شحرور",
   "url": "https://www.eman-shahrour.de",
+  "image": "https://www.eman-shahrour.de/profile2.webp",
+  "email": "mailto:poststelle@eman-shahrour.de",
+  "description": "Kontaktinformationen und Standort von Frau Eman Hussein Shahrour in Bremerhaven, Deutschland.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Rickmersstraße 62",
@@ -54,10 +71,13 @@ const structuredData = {
     "postalCode": "27568",
     "addressCountry": "DE"
   },
-  "email": "poststelle@eman-shahrour.de"
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.eman-shahrour.de"
+  }
 };
 
-// Adding all structured data to the head section
+
 const scriptElement1 = document.createElement('script');
 scriptElement1.type = 'application/ld+json';
 scriptElement1.text = JSON.stringify(websiteStructuredData);
@@ -70,5 +90,5 @@ document.head.appendChild(scriptElement2);
 
 const scriptElement3 = document.createElement('script');
 scriptElement3.type = 'application/ld+json';
-scriptElement3.text = JSON.stringify(structuredData);
+scriptElement3.text = JSON.stringify(personStructuredData);
 document.head.appendChild(scriptElement3);
